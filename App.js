@@ -1,21 +1,21 @@
-import { StatusBar } from 'expo-status-bar';
-import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { createAppContainer } from "react-navigation";
+import { createStackNavigator } from "react-navigation-stack";
+import HomeScreen from "./src/screens/HomeScreen";
+import Screen1 from './src/screens/Screen1';
+import Screen2 from './src/screens/Screen2'
+import Screen3 from './src/screens/Screen3'
 
-export default function App() {
-  return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
-  );
-}
+const navigator = createStackNavigator({
+  Home: HomeScreen,
+  Screen1: Screen1,
+  Screen2: Screen2,
+  Screen3: Screen3,
+}, {
+   initialRouteName: 'Home',
+   defaultNavigationOptions: {
+    title: 'hackathon'
+   }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
 });
+
+export default createAppContainer(navigator);
