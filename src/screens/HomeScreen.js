@@ -18,6 +18,19 @@ const HomeScreen = ({navigation}) => {
         onPress={() => navigation.navigate("Screen3")}
         title='Go to Screen3'
       />
+      <Button 
+        onPress={() => navigation.navigate("Screen4")}
+        title='Go to Screen4'
+      />
+      <Button 
+        onPress={() => navigation.navigate("Screen5")}
+        title='Go to Screen5'
+      />
+
+
+
+
+
 
     </View>
 
