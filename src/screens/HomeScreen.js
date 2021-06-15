@@ -18,6 +18,10 @@ const HomeScreen = ({navigation}) => {
         onPress={() => navigation.navigate("Screen3")}
         title='Go to Screen3'
       />
+      <Button 
+        onPress={() => navigation.navigate("SearchScreen")}
+        title='Go to SearchScreen'
+      />
 
     </View>
 
