@@ -77,8 +77,13 @@ const HomeScreen = ({ navigation }) => {
         title="Go to Screen5"
       />
 
-      <Text style={styles.titleText}>Welcome</Text>
+      
+      <Button 
+        onPress={() => navigation.navigate("SearchScreen")}
+        title='Go to SearchScreen'
+      />
 
+    <Text style={styles.titleText}>Welcome</Text>
       <Text style={styles.baseText}>Please enter your location</Text>
 
       <View style={styles.belowSection}>
