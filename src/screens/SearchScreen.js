@@ -17,7 +17,7 @@ class SearchScreen extends React.Component {
     return (
       <View>
       <SearchBar
-        placeholder="Search for Restaurants"
+        placeholder="Search for Restaurants..."
         onChangeText={this.updateSearch}
         value={search}
       />
