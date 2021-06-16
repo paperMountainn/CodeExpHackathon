@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 import {
   Alert,
   Modal,
@@ -8,15 +8,17 @@ import {
   View,
   Image,
   Button,
+  Picker,
   TextInput,
   Linking,
-} from 'react-native';
+} from "react-native";
 
-import ModalDropdown from 'react-native-modal-dropdown';
+import ModalDropdown from "react-native-modal-dropdown";
 
 export default function RestaurantInfoScreen({ navigation }) {
   const [text, onChangeText] = React.useState(null);
   const [modalVisible, setModalVisible] = useState(false);
+  const [selectedValue, setSelectedValue] = useState("1");
 
   return (
     <View style={styles.centeredView}>
@@ -26,15 +28,14 @@ export default function RestaurantInfoScreen({ navigation }) {
         <Image
           style={styles.imageStyle}
           source={{
-            uri:
-              'https://1000logos.net/wp-content/uploads/2017/03/McDonalds-logo-500x281.png',
+            uri: "https://1000logos.net/wp-content/uploads/2017/03/McDonalds-logo-500x281.png",
           }}
         />
 
         <Button
           onPress={() =>
             Linking.openURL(
-              'https://www.mcdonalds.com.sg/our-food/mcdonalds/main/'
+              "https://www.mcdonalds.com.sg/our-food/mcdonalds/main/"
             )
           }
           title="view menu"
@@ -44,7 +45,8 @@ export default function RestaurantInfoScreen({ navigation }) {
 
       <Pressable
         style={[styles.button, styles.buttonOpen]}
-        onPress={() => setModalVisible(true)}>
+        onPress={() => setModalVisible(true)}
+      >
         <Text style={styles.textStyle}> Check Queue</Text>
       </Pressable>
 
@@ -53,17 +55,29 @@ export default function RestaurantInfoScreen({ navigation }) {
         transparent={true}
         visible={modalVisible}
         onRequestClose={() => {
-          Alert.alert('Modal has been closed.');
+          Alert.alert("nvm, i changed my mind");
           setModalVisible(!modalVisible);
-        }}>
+        }}
+      >
         <View style={styles.centeredView}>
           <View style={styles.modalContainer}>
             <View style={styles.modalView}>
-              <Pressable
-                style={[styles.button, styles.buttonClose]}
-                onPress={() => setModalVisible(!modalVisible)}>
-                <Text style={styles.rightStyle}> exit </Text>
-              </Pressable>
+              <Text style={styles.modalText}>Number of Pax</Text>
+              <View style={styles.container}>
+                <Picker
+                  selectedValue={selectedValue}
+                  style={{ height: 50, width: 150 }}
+                  onValueChange={(itemValue, itemIndex) =>
+                    setSelectedValue(itemValue)
+                  }
+                >
+                  <Picker.Item label="1" value="1" />
+                  <Picker.Item label="2" value="2" />
+                  <Picker.Item label="3" value="3" />
+                  <Picker.Item label="4" value="4" />
+                  <Picker.Item label="5" value="5" />
+                </Picker>
+              </View>
 
               <TextInput
                 style={styles.input}
@@ -71,20 +85,22 @@ export default function RestaurantInfoScreen({ navigation }) {
                 onChangeText={onChangeText}
                 keyboardType="numeric"
               />
+              {text !== null ? (
+                <Button
+                  color="#000"
+                  title="Enter"
+                  onPress={() => navigation.navigate("QueueCard")}
+                ></Button>
+              ) : null}
+
+              <Pressable
+                style={[styles.button, styles.buttonClose]}
+                onPress={() => setModalVisible(!modalVisible)}
+              >
+                <Text style={styles.rightStyle}> go back </Text>
+              </Pressable>
             </View>
-            {text !== null ? (
-              <Button
-                color="#000"
-                title="Enter"
-                onPress={() => navigation.navigate('QueueCard')}></Button>
-            ) : null}
           </View>
-
-          <Text style={styles.modalText}>Number of Pax</Text>
-
-          <ModalDropdown options={['1', '2', '3', '4', '5']}>
-            <Text style={styles.mediumText}> select number </Text>
-          </ModalDropdown>
         </View>
       </Modal>
     </View>
@@ -95,17 +111,17 @@ const styles = StyleSheet.create({
   centeredView: {
     flex: 1,
     // justifyContent: 'center',
-    alignItems: 'center',
-    marginTop: 20,
+    alignItems: "center",
+
   },
   modalView: {
-    marginTop: 100,
-    height: 500,
-    backgroundColor: 'white',
+    marginTop: 150,
+    height: 400,
+    backgroundColor: "white",
     borderRadius: 10, //round edges
     padding: 100,
-    alignItems: 'center',
-    shadowColor: '#000',
+    alignItems: "center",
+    shadowColor: "#000",
     shadowOffset: {
       width: 0,
       height: 2,
@@ -118,32 +134,33 @@ const styles = StyleSheet.create({
     borderRadius: 10,
     padding: 10,
     elevation: 2,
-    margin: 10
+    margin: 65,
+  
   },
   buttonOpen: {
-    backgroundColor: '#f9c647',
+    backgroundColor: "#f9c647",
   },
   buttonClose: {
-    backgroundColor: '#f9c647',
+    backgroundColor: "#f9c647",
   },
   textStyle: {
-    color: 'white',
-    fontWeight: 'bold',
-    textAlign: 'center',
+    color: "white",
+    fontWeight: "bold",
+    textAlign: "center",
   },
 
   rightStyle: {
-    color: 'white',
-    fontWeight: 'bold',
-    textAlign: 'right',
+    color: "white",
+    fontWeight: "bold",
+    textAlign: "right",
   },
   modalText: {
-    marginBottom: 15,
-    textAlign: 'center',
+    marginBottom: 5,
+    textAlign: "center",
   },
 
   mediumText: {
-    fontFamily: 'SofiaPro',
+    fontFamily: "SofiaPro",
     margin: 10,
     fontSize: 15,
   },
@@ -151,7 +168,6 @@ const styles = StyleSheet.create({
     fontSize: 30,
     fontWeight: "bold",
     fontFamily: "SofiaPro",
-
   },
 
   input: {
@@ -159,18 +175,18 @@ const styles = StyleSheet.create({
     paddingRight: 10,
     paddingBottom: 10,
     paddingLeft: 10,
-    backgroundColor: '#808080',
-    color: '#424242',
+    marginBottom: 10,
+    backgroundColor: "#dbdad7",
+    color: "#000000",
   },
 
   container: {
-    paddingTop: 50,
+    paddingTop: 10,
   },
 
   modalContainer: {
-    paddingTop: 10,
   },
-  
+
   Logo: {
     width: 300,
     height: 300,
@@ -179,7 +195,5 @@ const styles = StyleSheet.create({
     width: 300,
     borderRadius: 5,
     height: 200,
-},
+  },
 });
-
-
