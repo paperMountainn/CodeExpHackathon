@@ -60,7 +60,10 @@ const HomeScreen = ({ navigation }) => {
   
 
   return (
-    <ScrollView style={{ backgroundColor: "gold" }}>
+    <ScrollView 
+    style={{ backgroundColor: "gold"  }}
+    showsVerticalScrollIndicator={false}
+    >
     <Text style={styles.titleText}>Queue for Food!</Text>
     <Image 
         style={styles.image}
@@ -129,16 +132,16 @@ const HomeScreen = ({ navigation }) => {
 const styles = StyleSheet.create({
   baseText: {
     fontFamily: "SofiaPro",
-    marginLeft: 30,
     fontSize: 10,
-    marginTop: 20,
-    color: '#28334AFF'
+    color: '#28334AFF',
+    alignSelf: 'center',
+    marginVertical: 10
   },
   titleText: {
     marginTop: 30,
     fontSize: 30,
     fontWeight: "bold",
-    marginLeft: 30,
+    marginLeft: 40,
     fontFamily: "SofiaPro",
     color: '#28334AFF'
   },
@@ -163,7 +166,7 @@ const styles = StyleSheet.create({
   belowSection: {
     flexDirection: "column",
     width: "60%",
-    marginLeft: 30,
+    alignSelf: 'center'
   },
   buttonWrapper:{
     backgroundColor: '#28334AFF',
@@ -177,7 +180,7 @@ const styles = StyleSheet.create({
     borderRadius: 5,
     height: 300,
     marginBottom: 5,
-    marginLeft: 30,
+    marginLeft: 40,
     marginTop:10,
   },
   routeStuff: {
