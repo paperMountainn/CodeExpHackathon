@@ -101,7 +101,6 @@ class SearchScreenInitial extends React.Component {
       </View>
 
 
-
       <View style={{flexDirection:"row"}}>
         <TouchableOpacity onPress={() => alert('Redirecting')} style={styles.button}>
           <Text style={styles.buttonText}>Seafood</Text>
