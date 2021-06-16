@@ -18,9 +18,9 @@ function QueueCard(){
                 </Card>
             </SafeAreaView>
 
-            <Text style={styles.baseText}>Now serving </Text>
+            <Text style={styles.baseText}> Now serving ... </Text>
 
-            <Text style={styles.baseText}>Number of people in front of you</Text>
+            <Text style={styles.baseText}> Number of people in front of you: 6</Text>
   
         </ScrollView>
     );
@@ -32,11 +32,11 @@ const styles = StyleSheet.create({
     baseText: {
         fontFamily: "SofiaPro",
         marginLeft: 30,
-        marginTop: 100,
-        fontSize: 30,
+        marginTop: 15,
+        fontSize: 15,
       },
       titleText: {
-          fontSize: 50,
+          fontSize: 20,
           marginTop: 30,
         fontWeight: "bold",
         fontFamily: "SofiaPro",
@@ -50,8 +50,7 @@ const styles = StyleSheet.create({
     }, 
     card: {
         marginTop: 30,
-        marginLeft: 30,
-        marginRight: 30,
+        marginHorizontal: 30,
         flex: 1,
 
     }

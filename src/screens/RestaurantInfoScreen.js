@@ -14,7 +14,7 @@ import {
 
 import ModalDropdown from 'react-native-modal-dropdown';
 
-export default function Screen3({ navigation }) {
+export default function RestaurantInfoScreen({ navigation }) {
   const [text, onChangeText] = React.useState(null);
   const [modalVisible, setModalVisible] = useState(false);
 
@@ -24,7 +24,6 @@ export default function Screen3({ navigation }) {
 
       <View style={styles.container}>
         <Image
-          style={styles.Logo}
           source={{
             uri:
               'https://1000logos.net/wp-content/uploads/2017/03/McDonalds-logo-500x281.png',
@@ -142,15 +141,12 @@ const styles = StyleSheet.create({
 
   mediumText: {
     fontFamily: 'SofiaPro',
-    marginLeft: 30,
     marginTop: 20,
-    fontSize: 20,
+    fontSize: 15,
   },
   titleText: {
-    marginTop: 30,
-    fontSize: 50,
+    fontSize: 40,
     fontWeight: 'bold',
-    marginLeft: 30,
     fontFamily: 'SofiaPro',
   },
 
@@ -176,3 +172,5 @@ const styles = StyleSheet.create({
     height: 300,
   },
 });
+
+

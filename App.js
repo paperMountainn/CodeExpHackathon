@@ -5,12 +5,12 @@ import Screen1 from './src/screens/Screen1';
 import QueueCard from "./src/screens/QueueCard";
 import SearchScreen from './src/screens/SearchScreen'
 import SearchScreenInitial from "./src/screens/SearchScreenInitial";
-import Screen3 from "./src/screens/Screen3";
+import RestaurantInfoScreen from "./src/screens/RestaurantInfoScreen";
 
 const navigator = createStackNavigator({
   Home: HomeScreen,
   Screen1: Screen1,
-  Screen3: Screen3,
+  RestaurantInfoScreen: RestaurantInfoScreen,
   QueueCard: QueueCard,
   SearchScreen: SearchScreen,
   SearchScreenInitial: SearchScreenInitial,

@@ -86,8 +86,8 @@ const HomeScreen = ({ navigation }) => {
         title="Go to Screen1"
       />
       <Button
-        onPress={() => navigation.navigate("Screen3")}
-        title="Go to Pris screen"
+        onPress={() => navigation.navigate("RestaurantInfoScreen")}
+        title="Go to RestaurantInfoScreen"
       />
        <Button
         onPress={() => navigation.navigate("QueueCard")}
