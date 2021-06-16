@@ -148,7 +148,7 @@ const styles = StyleSheet.create({
   },
 
   belowSection: {
-    flexDirection: "col",
+    flexDirection: "column",
     width: "60%",
     marginLeft: 30,
   },

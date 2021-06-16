@@ -2,6 +2,7 @@ import React from 'react'
 import {Text, StyleSheet, ScrollView, SafeAreaView} from 'react-native';
 import { List, Card, Paragraph, Title } from 'react-native-paper';
 
+
 function Screen5(){
     return (
         <ScrollView style={{ backgroundColor: "gold" }}>
@@ -44,7 +45,7 @@ const styles = StyleSheet.create({
     },
     
     cardcontent: {
-        flexDirection: "col",
+        flexDirection: 'column',
         justifyContent: "center",
         alignItems: "center",
     }, 
