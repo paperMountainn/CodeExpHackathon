@@ -30,15 +30,9 @@
     "@expo/vector-icons": "^12.0.0",
     "react-native-material-dropdown": "*",
     "react-native-modal-dropdown": "*"
-  }
-}
+  },
   "devDependencies": {
-  "@babel/core": "^7.9.0"
-},
-"private": true,
-"rnpm": {
-  "assets": [
-    "./assets/fonts/"
-  ]
-}
+    "@babel/core": "^7.9.0"
+  },
+  "private": true
 }
