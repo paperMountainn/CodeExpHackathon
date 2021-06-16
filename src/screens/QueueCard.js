@@ -8,7 +8,6 @@ function QueueCard(){
         <ScrollView style={{ backgroundColor: "gold" }}>
              <SafeAreaView>
         
-
                 <Card style={styles.card}>
                     <Card.Content style={styles.cardcontent}>
                         <Title style={styles.titleText} >Queue Number</Title>

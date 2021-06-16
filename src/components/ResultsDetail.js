@@ -22,12 +22,15 @@ function ResultsDetail({result}){
 const styles = StyleSheet.create({
     container: {
         marginLeft: 15,
+        backgroundColor:'white',
+        borderRadius: 5
     },
     image: {
         width: 250,
         borderRadius: 5,
         height: 120,
-        marginBottom: 5
+        marginBottom: 5,
+        
     },
     name: {
         fontWeight: 'bold',

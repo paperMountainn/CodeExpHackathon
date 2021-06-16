@@ -94,7 +94,7 @@ const HomeScreen = ({ navigation }) => {
             keyboardType="numeric"
           />
         </View>
-        { text !== null ? <Button  color="#000" title="Get Started" onPress={() => navigation.navigate("Screen1")}></Button> : null }
+        { text !== null ? <Button  color="#000" title="Get Started" onPress={() => navigation.navigate("SearchScreen")}></Button> : null }
       </View>
     </ScrollView>
   );

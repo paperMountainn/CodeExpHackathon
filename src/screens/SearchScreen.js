@@ -1,10 +1,9 @@
 import React, { useState } from 'react'
 import {Text, StyleSheet, View, ScrollView} from 'react-native';
-// import SearchBar from '../components/SearchBar'
-// import yelp from '../api/yelp'
 import { SearchBar } from 'react-native-elements';
 import useResults from '../hooks/useResultsFromAPI';
 import ResultsList from '../components/ResultsFlatList';
+
 
 function SearchScreen(){
     const [term, setTerm] = useState('');
@@ -19,8 +18,9 @@ function SearchScreen(){
     };
 
     return (
-        <>
+        <View style={styles.viewStyle}>
             <SearchBar 
+                style={styles.searchBarStyle}
                 placeholder="Search restaurant"
                 value={term}
                 onChangeText={setTerm}
@@ -35,11 +35,17 @@ function SearchScreen(){
                 <ResultsList results={filterResultsByPrice('$$')} title="Longer Queuing Time"/>
                 <ResultsList results={filterResultsByPrice('$$$')} title="Longest Queuing Time"/>
             </ScrollView>
-        </>
+        </View>
     );
 };
 
 const styles = StyleSheet.create({
+    viewStyle: {
+        backgroundColor: 'gold',
+    },
+    searchBarStyle: {
+        backgroundColor: 'white',
+    }
 
 });
 
