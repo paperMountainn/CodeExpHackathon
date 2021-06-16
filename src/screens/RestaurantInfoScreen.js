@@ -24,6 +24,7 @@ export default function RestaurantInfoScreen({ navigation }) {
 
       <View style={styles.container}>
         <Image
+          style={styles.imageStyle}
           source={{
             uri:
               'https://1000logos.net/wp-content/uploads/2017/03/McDonalds-logo-500x281.png',
@@ -44,7 +45,7 @@ export default function RestaurantInfoScreen({ navigation }) {
       <Pressable
         style={[styles.button, styles.buttonOpen]}
         onPress={() => setModalVisible(true)}>
-        <Text style={styles.textStyle}>Join the Queue</Text>
+        <Text style={styles.textStyle}> Check Queue</Text>
       </Pressable>
 
       <Modal
@@ -75,7 +76,7 @@ export default function RestaurantInfoScreen({ navigation }) {
               <Button
                 color="#000"
                 title="Enter"
-                onPress={() => navigation.navigate('Screen5')}></Button>
+                onPress={() => navigation.navigate('QueueCard')}></Button>
             ) : null}
           </View>
 
@@ -93,12 +94,13 @@ export default function RestaurantInfoScreen({ navigation }) {
 const styles = StyleSheet.create({
   centeredView: {
     flex: 1,
-    justifyContent: 'center',
+    // justifyContent: 'center',
     alignItems: 'center',
-    marginTop: 22,
+    marginTop: 20,
   },
   modalView: {
-    margin: 1,
+    marginTop: 100,
+    height: 500,
     backgroundColor: 'white',
     borderRadius: 10, //round edges
     padding: 100,
@@ -113,9 +115,10 @@ const styles = StyleSheet.create({
     elevation: 5,
   },
   button: {
-    borderRadius: 20,
+    borderRadius: 10,
     padding: 10,
     elevation: 2,
+    margin: 10
   },
   buttonOpen: {
     backgroundColor: '#f9c647',
@@ -141,22 +144,22 @@ const styles = StyleSheet.create({
 
   mediumText: {
     fontFamily: 'SofiaPro',
-    marginTop: 20,
+    margin: 10,
     fontSize: 15,
   },
   titleText: {
-    fontSize: 40,
-    fontWeight: 'bold',
-    fontFamily: 'SofiaPro',
+    fontSize: 30,
+    fontWeight: "bold",
+    fontFamily: "SofiaPro",
+
   },
 
   input: {
-    flex: 1,
     paddingTop: 10,
     paddingRight: 10,
     paddingBottom: 10,
     paddingLeft: 10,
-    backgroundColor: '#fff',
+    backgroundColor: '#808080',
     color: '#424242',
   },
 
@@ -167,10 +170,16 @@ const styles = StyleSheet.create({
   modalContainer: {
     paddingTop: 10,
   },
+  
   Logo: {
     width: 300,
     height: 300,
   },
+  imageStyle: {
+    width: 300,
+    borderRadius: 5,
+    height: 200,
+},
 });
 
 
