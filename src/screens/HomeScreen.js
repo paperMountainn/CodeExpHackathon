@@ -64,14 +64,6 @@ const HomeScreen = ({ navigation }) => {
         onPress={() => navigation.navigate("Screen1")}
         title="Go to Screen1"
       />
-      <Button
-        onPress={() => navigation.navigate("Screen2")}
-        title="Go to Screen2"
-      />
-      <Button
-        onPress={() => navigation.navigate("Screen3")}
-        title="Go to Screen3"
-      />
        <Button
         onPress={() => navigation.navigate("Screen5")}
         title="Go to Screen5"
