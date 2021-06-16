@@ -27,7 +27,7 @@ class SearchScreenInitial extends React.Component {
         onChangeText={this.updateSearch}
         value={search}
         lightTheme="false"
-        containerStyle={{backgroundColor: 'white', borderWidth: 0, borderRadius: 0}}
+        containerStyle={{backgroundColor: 'black', borderWidth: 0, borderRadius: 0}}
         inputContainerStyle={{backgroundColor: 'light grey', borderWidth: 1, borderRadius: 30}}
       />
 
