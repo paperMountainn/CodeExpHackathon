@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 import {
   View,
   Text,
@@ -8,41 +8,46 @@ import {
   TouchableOpacity,
   TextInput,
   SafeAreaView,
-} from 'react-native';
-import FontAwesome from 'react-native-vector-icons/FontAwesome';
-import { Entypo } from '@expo/vector-icons';
+} from "react-native";
+import FontAwesome from "react-native-vector-icons/FontAwesome";
+import { Entypo } from "@expo/vector-icons";
 
 let map;
 let service;
 let infowindow;
+  
 
 const HomeScreen = ({ navigation }) => {
   const [text, onChangeText] = React.useState(null);
-  console.log(text); //pass props to api
+  console.log(text) //pass props to api 
+
 
   // console.log(props.navigation)
-  function getLat(text) {}
+  function getLat(text) {
+    
+    
+  }
 
   function initialize() {
-    //http://maps.googleapis.com/maps/api/geocode/json?address={text}
+  //http://maps.googleapis.com/maps/api/geocode/json?address={text}
 
-    var pyrmont = new google.maps.LatLng(-33.8665433, 151.1956316);
-
+    var pyrmont = new google.maps.LatLng(-33.8665433,151.1956316);
+  
     map = new google.maps.Map(document.getElementById('map'), {
-      center: pyrmont,
-      zoom: 15,
-    });
-
+        center: pyrmont,
+        zoom: 15
+      });
+  
     var request = {
       location: pyrmont,
       radius: '500',
-      type: ['restaurant'],
+      type: ['restaurant']
     };
-
+  
     service = new google.maps.places.PlacesService(map);
     service.nearbySearch(request, callback);
   }
-
+  
   function callback(results, status) {
     if (status == google.maps.places.PlacesServiceStatus.OK) {
       for (var i = 0; i < results.length; i++) {
@@ -51,32 +56,11 @@ const HomeScreen = ({ navigation }) => {
     }
   }
 
+  
+
   return (
-    <ScrollView style={{ backgroundColor: 'gold' }}>
-      <Button
-        onPress={() => navigation.navigate('Screen1')}
-        title="Go to Screen1"
-      />
-      <Button
-        onPress={() => navigation.navigate('Screen2')}
-        title="Go to Screen2"
-      />
-      <Button
-        onPress={() => navigation.navigate('Screen3')}
-        title="Go to Screen3"
-      />
-     
-      <Button
-        onPress={() => navigation.navigate('Screen5')}
-        title="Go to Screen5"
-      />
-
-      <Button
-        onPress={() => navigation.navigate('SearchScreen')}
-        title="Go to SearchScreen"
-      />
-
-      <Text style={styles.titleText}>Welcome</Text>
+    <ScrollView style={{ backgroundColor: "gold" }}>
+    <Text style={styles.titleText}>Welcome</Text>
       <Text style={styles.baseText}>Please enter your location</Text>
 
       <View style={styles.belowSection}>
@@ -94,13 +78,32 @@ const HomeScreen = ({ navigation }) => {
             keyboardType="numeric"
           />
         </View>
-        {text !== null ? (
-          <Button
-            color="#000"
-            title="Get Started"
-            onPress={() => navigation.navigate('Screen1')}></Button>
-        ) : null}
+        { text !== null ? <Button  color="#000" title="Get Started" onPress={() => navigation.navigate("SearchScreen")}></Button> : null }
       </View>
+
+      <Button
+        onPress={() => navigation.navigate("Screen1")}
+        title="Go to Screen1"
+      />
+       <Button
+        onPress={() => navigation.navigate("QueueCard")}
+        title="Go to QueueCard"
+      />
+
+      
+      <Button 
+        onPress={() => navigation.navigate("SearchScreen")}
+        title='Go to SearchScreen'
+      />
+
+      <Button 
+        onPress={() => navigation.navigate("SearchScreen")}
+        title='Go to SearchScreen'
+      />
+      <Button 
+        onPress={() => navigation.navigate("SearchScreenInitial")}
+        title='Go to SearchScreen ShiHui'
+      />
     </ScrollView>
   );
 };
@@ -110,7 +113,7 @@ const HomeScreen = ({ navigation }) => {
 
 const styles = StyleSheet.create({
   baseText: {
-    fontFamily: 'SofiaPro',
+    fontFamily: "SofiaPro",
     marginLeft: 30,
     marginTop: 100,
     fontSize: 30,
@@ -118,18 +121,18 @@ const styles = StyleSheet.create({
   titleText: {
     marginTop: 30,
     fontSize: 50,
-    fontWeight: 'bold',
+    fontWeight: "bold",
     marginLeft: 30,
-    fontFamily: 'SofiaPro',
+    fontFamily: "SofiaPro",
   },
 
   searchSection: {
     flex: 1,
-    flexDirection: 'row',
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#fff',
-    marginBottom: 50,
+    flexDirection: "row",
+    justifyContent: "center",
+    alignItems: "center",
+    backgroundColor: "#fff",
+    marginBottom: 50
   },
   locationIcon: {
     padding: 10,
@@ -140,15 +143,16 @@ const styles = StyleSheet.create({
     paddingRight: 10,
     paddingBottom: 10,
     paddingLeft: 10,
-    backgroundColor: '#fff',
-    color: '#424242',
+    backgroundColor: "#fff",
+    color: "#424242",
   },
-
   belowSection: {
-    flexDirection: 'column',
-    width: '60%',
+    flexDirection: "column",
+    width: "60%",
     marginLeft: 30,
   },
+
+  
 });
 
 export default HomeScreen;

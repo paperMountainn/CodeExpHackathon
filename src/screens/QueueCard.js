@@ -2,12 +2,12 @@ import React from 'react'
 import {Text, StyleSheet, ScrollView, SafeAreaView} from 'react-native';
 import { List, Card, Paragraph, Title } from 'react-native-paper';
 
-function Screen5(){
+
+function QueueCard(){
     return (
         <ScrollView style={{ backgroundColor: "gold" }}>
              <SafeAreaView>
-                
-
+        
                 <Card style={styles.card}>
                     <Card.Content style={styles.cardcontent}>
                         <Title style={styles.titleText} >Queue Number</Title>
@@ -44,7 +44,7 @@ const styles = StyleSheet.create({
     },
     
     cardcontent: {
-        flexDirection: "col",
+        flexDirection: 'column',
         justifyContent: "center",
         alignItems: "center",
     }, 
@@ -57,4 +57,4 @@ const styles = StyleSheet.create({
     }
 });
 
-export default Screen5;
+export default QueueCard;
