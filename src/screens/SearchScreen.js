@@ -29,7 +29,7 @@ function SearchScreen(){
 
             {errorMessage ? <Text>{errorMessage}</Text> : null}
             
-            <Text>We have found {results.length} results</Text>
+            {/* <Text>We have found {results.length} results</Text> */}
             <ScrollView>
                 <ResultsList results={filterResultsByPrice('$')} title="Short Queuing Time" />
                 <ResultsList results={filterResultsByPrice('$$')} title="Longer Queuing Time"/>

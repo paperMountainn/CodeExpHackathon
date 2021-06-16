@@ -124,7 +124,7 @@ class SearchScreenInitial extends React.Component {
     </View>
 
 
-      <Text>{this.state.search}</Text>
+      {/* <Text>{this.state.search}</Text> */}
 
     </SafeAreaView>
     );

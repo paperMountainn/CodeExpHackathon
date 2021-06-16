@@ -64,7 +64,7 @@ const HomeScreen = ({ navigation }) => {
     style={{ backgroundColor: "gold"  }}
     showsVerticalScrollIndicator={false}
     >
-    <Text style={styles.titleText}>Queue for Food!</Text>
+    {/* <Text style={styles.titleText}>Queue for Food!</Text> */}
     <Image 
         style={styles.image}
         source={{ uri:"https://i.ibb.co/z4PrQZZ/chicken.png"}}
@@ -87,7 +87,7 @@ const HomeScreen = ({ navigation }) => {
             placeholder='postal code'
           />
         </View>
-        { text !== null ? 
+
         <View style={styles.buttonWrapper}>
           <Button 
             color='#fff'
@@ -97,14 +97,9 @@ const HomeScreen = ({ navigation }) => {
             onPress={() => navigation.navigate("SearchScreenInitial")}>
           </Button>
         </View>
-        : null }
+
       </View>
 
-      <Button
-        style={styles.routeStuff}
-        onPress={() => navigation.navigate("Screen1")}
-        title="Go to Screen1"
-      />
       <Button
         onPress={() => navigation.navigate("RestaurantInfoScreen")}
         title="Go to RestaurantInfoScreen"
@@ -112,15 +107,6 @@ const HomeScreen = ({ navigation }) => {
        <Button
         onPress={() => navigation.navigate("QueueCard")}
         title="Go to QueueCard"
-      />
-
-      <Button 
-        onPress={() => navigation.navigate("SearchScreen")}
-        title='Go to SearchScreen'
-      />
-      <Button 
-        onPress={() => navigation.navigate("SearchScreenInitial")}
-        title='Go to SearchScreen ShiHui'
       />
     </ScrollView>
   );
@@ -181,7 +167,7 @@ const styles = StyleSheet.create({
     height: 300,
     marginBottom: 5,
     marginLeft: 40,
-    marginTop:10,
+    marginTop:40,
   },
   routeStuff: {
     marginTop: 40,
