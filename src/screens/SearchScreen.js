@@ -1,41 +1,46 @@
-import React from 'react'
+import React, { useState } from 'react'
+import {Text, StyleSheet, View, ScrollView} from 'react-native';
+// import SearchBar from '../components/SearchBar'
+// import yelp from '../api/yelp'
 import { SearchBar } from 'react-native-elements';
-import { Text, StyleSheet, View } from 'react-native';
+import useResults from '../hooks/useResultsFromAPI';
+import ResultsList from '../components/ResultsFlatList';
 
-class SearchScreen extends React.Component {
-  state = {
-    search: '',
-  };
+function SearchScreen(){
+    const [term, setTerm] = useState('');
+    const [searchAPI, results, errorMessage] = useResults();
+    console.log(results);
 
-  updateSearch = (search) => {
-    this.setState({ search });
-  };
-
-  render() {
-    const { search } = this.state;
+    const filterResultsByPrice = (price) => {
+        // price === '$' || '$$' || '$$$'
+        return results.filter(result => {
+            return result.price === price;
+        });
+    };
 
     return (
-      <View>
-      <SearchBar
-        placeholder="Search for Restaurants"
-        onChangeText={this.updateSearch}
-        value={search}
-      />
-      <Text>{this.state.search}</Text>
-      </View>
+        <>
+            <SearchBar 
+                placeholder="Search restaurant"
+                value={term}
+                onChangeText={setTerm}
+                onEndEditing={() => searchAPI(term)}
+            />
+
+            {errorMessage ? <Text>{errorMessage}</Text> : null}
+            
+            <Text>We have found {results.length} results</Text>
+            <ScrollView>
+                <ResultsList results={filterResultsByPrice('$')} title="Short Queuing Time" />
+                <ResultsList results={filterResultsByPrice('$$')} title="Longer Queuing Time"/>
+                <ResultsList results={filterResultsByPrice('$$$')} title="Longest Queuing Time"/>
+            </ScrollView>
+        </>
     );
-  };
 };
 
-
 const styles = StyleSheet.create({
-  // group of styles to the text element
-  textStyle: {
-    fontSize: 30
-  },
-  subHeaderStyle: {
-    fontSize: 20
-  }
+
 });
 
 export default SearchScreen;
