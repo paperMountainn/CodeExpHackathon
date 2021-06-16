@@ -60,21 +60,6 @@ const HomeScreen = ({ navigation }) => {
 
   return (
     <ScrollView style={{ backgroundColor: "gold" }}>
-      <Button
-        onPress={() => navigation.navigate("Screen1")}
-        title="Go to Screen1"
-      />
-       <Button
-        onPress={() => navigation.navigate("QueueCard")}
-        title="Go to QueueCard"
-      />
-
-      
-      <Button 
-        onPress={() => navigation.navigate("SearchScreen")}
-        title='Go to SearchScreen'
-      />
-
     <Text style={styles.titleText}>Welcome</Text>
       <Text style={styles.baseText}>Please enter your location</Text>
 
@@ -90,12 +75,26 @@ const HomeScreen = ({ navigation }) => {
             style={styles.input}
             placeholder="postal code here"
             onChangeText={onChangeText}
-        
             keyboardType="numeric"
           />
         </View>
         { text !== null ? <Button  color="#000" title="Get Started" onPress={() => navigation.navigate("SearchScreen")}></Button> : null }
       </View>
+
+      <Button
+        onPress={() => navigation.navigate("Screen1")}
+        title="Go to Screen1"
+      />
+       <Button
+        onPress={() => navigation.navigate("QueueCard")}
+        title="Go to QueueCard"
+      />
+
+      
+      <Button 
+        onPress={() => navigation.navigate("SearchScreen")}
+        title='Go to SearchScreen'
+      />
     </ScrollView>
   );
 };
@@ -138,7 +137,6 @@ const styles = StyleSheet.create({
     backgroundColor: "#fff",
     color: "#424242",
   },
-
   belowSection: {
     flexDirection: "column",
     width: "60%",
