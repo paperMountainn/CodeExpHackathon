@@ -18,9 +18,7 @@ class SearchScreenInitial extends React.Component {
 
   render() {
     const { search } = this.state;
-
     return (
-
       <SafeAreaView style={styles.container1}>
       <SearchBar
         placeholder="Search for Restaurants..."
@@ -30,7 +28,6 @@ class SearchScreenInitial extends React.Component {
         containerStyle={{backgroundColor: 'white', borderWidth: 0, borderRadius: 0}}
         inputContainerStyle={{backgroundColor: 'light grey', borderWidth: 1, borderRadius: 30}}
       />
-
 
     <View style={styles.container2}>
 
