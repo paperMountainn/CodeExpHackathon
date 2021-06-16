@@ -4,12 +4,14 @@ import HomeScreen from "./src/screens/HomeScreen";
 import Screen1 from './src/screens/Screen1';
 import QueueCard from "./src/screens/QueueCard";
 import SearchScreen from './src/screens/SearchScreen'
+import SearchScreenInitial from "./src/screens/SearchScreenInitial";
 
 const navigator = createStackNavigator({
   Home: HomeScreen,
   Screen1: Screen1,
   QueueCard: QueueCard,
   SearchScreen: SearchScreen,
+  SearchScreenInitial: SearchScreenInitial,
 }, {
    initialRouteName: 'Home',
    defaultNavigationOptions: {

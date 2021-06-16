@@ -95,6 +95,15 @@ const HomeScreen = ({ navigation }) => {
         onPress={() => navigation.navigate("SearchScreen")}
         title='Go to SearchScreen'
       />
+
+      <Button 
+        onPress={() => navigation.navigate("SearchScreen")}
+        title='Go to SearchScreen'
+      />
+      <Button 
+        onPress={() => navigation.navigate("SearchScreenInitial")}
+        title='Go to SearchScreen ShiHui'
+      />
     </ScrollView>
   );
 };
