@@ -17,7 +17,7 @@ const navigator = createStackNavigator({
 }, {
    initialRouteName: 'Home',
    defaultNavigationOptions: {
-    title: 'hackathon'
+    title: 'goSeeQ!'
    }
 
 });
