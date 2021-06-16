@@ -78,7 +78,15 @@ const HomeScreen = ({ navigation }) => {
             keyboardType="numeric"
           />
         </View>
-        { text !== null ? <Button  color="#000" title="Get Started" onPress={() => navigation.navigate("SearchScreen")}></Button> : null }
+        { text !== null ? 
+        <View style={styles.buttonWrapper}>
+          <Button 
+            style={styles.buttonStyle} 
+            title="Get Started" 
+            onPress={() => navigation.navigate("SearchScreen")}>
+          </Button>
+        </View>
+        : null }
       </View>
 
       <Button
@@ -148,6 +156,12 @@ const styles = StyleSheet.create({
     flexDirection: "column",
     width: "60%",
     marginLeft: 30,
+  },
+  buttonWrapper:{
+    backgroundColor: '#fff',
+    borderRadius: 10,
+    padding: 5,
+    margin: 5,
   },
 
   

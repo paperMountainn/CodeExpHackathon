@@ -5,6 +5,7 @@ import { Text, StyleSheet, View, TouchableOpacity, SafeAreaView } from 'react-na
 import { AntDesign } from '@expo/vector-icons'; 
 
 
+
 class SearchScreenInitial extends React.Component {
 
   state = {
@@ -39,7 +40,7 @@ class SearchScreenInitial extends React.Component {
       </Text>
 
       <View style={{flexDirection:"row"}}>
-        <TouchableOpacity onPress={() => alert('Redirecting')} style={styles.button}>
+        <TouchableOpacity onPress={() => this.props.navigation.navigate('SearchScreen')} style={styles.button}>
           <Text style={styles.buttonText}>Waiting Time</Text>
         </TouchableOpacity>
 
