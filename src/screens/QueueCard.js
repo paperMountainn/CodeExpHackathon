@@ -12,7 +12,7 @@ function QueueCard(){
                     <Card.Content style={styles.cardcontent}>
                         <Title style={styles.titleText} >Queue Number</Title>
                         <Title style={styles.titleText} >8950</Title>
-                    <Paragraph >Your estimated waiting time is 50 mins</Paragraph>
+                    <Paragraph >Your estimated waiting time is 15 mins.</Paragraph>
                 </Card.Content>
                 
                 </Card>
@@ -20,7 +20,7 @@ function QueueCard(){
 
             <Text style={styles.baseText}> Now serving ... </Text>
 
-            <Text style={styles.baseText}> Number of people in front of you: 6</Text>
+            <Text style={styles.baseText}> Number of people in front of you: 3</Text>
   
         </ScrollView>
     );
