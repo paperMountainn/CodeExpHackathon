@@ -11,7 +11,7 @@ function QueueCard(){
                 <Card style={styles.card}>
                     <Card.Content style={styles.cardcontent}>
                         <Title style={styles.titleText} >Queue Number</Title>
-                        <Title style={styles.titleText} >123</Title>
+                        <Title style={styles.titleText} >8950</Title>
                     <Paragraph >Your estimated waiting time is 50 mins</Paragraph>
                 </Card.Content>
                 
