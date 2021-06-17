@@ -12,6 +12,7 @@ const navigator = createStackNavigator({
   QueueCard: QueueCard,
   SearchScreen: SearchScreen,
   SearchScreenInitial: SearchScreenInitial,
+  RestaurantDetailScreen: RestaurantDetailScreen,
 }, {
    initialRouteName: 'Home',
    defaultNavigationOptions: {

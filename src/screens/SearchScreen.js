@@ -5,7 +5,7 @@ import useResults from '../hooks/useResultsFromAPI';
 import ResultsList from '../components/ResultsFlatList';
 
 
-function SearchScreen(){
+function SearchScreen({navigation}){
     const [term, setTerm] = useState('');
     const [searchAPI, results, errorMessage] = useResults();
     console.log(results);
@@ -34,9 +34,9 @@ function SearchScreen(){
             
             {/* <Text>We have found {results.length} results</Text> */}
             <ScrollView>
-                <ResultsList results={filterResultsByPrice('$')} title="Short Queuing Time" />
-                <ResultsList results={filterResultsByPrice('$$')} title="Longer Queuing Time"/>
-                <ResultsList results={filterResultsByPrice('$$$')} title="Longest Queuing Time"/>
+                <ResultsList results={filterResultsByPrice('$')} title="Short Queuing Time" navigation={navigation}/>
+                <ResultsList results={filterResultsByPrice('$$')} title="Longer Queuing Time" navigation={navigation}/>
+                <ResultsList results={filterResultsByPrice('$$$')} title="Longest Queuing Time" navigation={navigation}/>
             </ScrollView>
         </View>
     );

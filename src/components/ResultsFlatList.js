@@ -1,8 +1,8 @@
 import React from 'react'
-import {Text, StyleSheet, View, FlatList} from 'react-native';
+import {Text, StyleSheet, View, FlatList, TouchableOpacity} from 'react-native';
 import ResultsDetail from './ResultsDetail';
 
-function ResultsFlatList({title, results}){
+function ResultsFlatList({title, results, navigation}){
     return (
         <View style={styles.container}>
             <Text style={styles.titleStyle}>{title}</Text>
@@ -16,8 +16,14 @@ function ResultsFlatList({title, results}){
                 keyExtractor={(result) => result.id}
                 renderItem={({ item }) => {
                     return (
-                        <ResultsDetail result={item}/>
-                        // <Text>{item.name}</Text>
+                        <TouchableOpacity
+                            onPress={() => {
+                                navigation.navigate("RestaurantDetailScreen");
+                            }}
+                        >
+                            <ResultsDetail result={item}/>
+                            {/* <Text>{item.name}</Text> */}
+                        </TouchableOpacity>
                     );
                 }}
             />
