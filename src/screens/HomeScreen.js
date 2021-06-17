@@ -8,6 +8,7 @@ import {
   TouchableOpacity,
   TextInput,
   SafeAreaView,
+  Image
 } from "react-native";
 import FontAwesome from "react-native-vector-icons/FontAwesome";
 import { Entypo } from "@expo/vector-icons";
@@ -59,9 +60,16 @@ const HomeScreen = ({ navigation }) => {
   
 
   return (
-    <ScrollView style={{ backgroundColor: "gold" }}>
-    <Text style={styles.titleText}>Welcome</Text>
-      <Text style={styles.baseText}>Please enter your location</Text>
+    <ScrollView 
+    style={{ backgroundColor: "gold"  }}
+    showsVerticalScrollIndicator={false}
+    >
+    {/* <Text style={styles.titleText}>Queue for Food!</Text> */}
+    <Image 
+        style={styles.image}
+        source={{ uri:"https://i.ibb.co/z4PrQZZ/chicken.png"}}
+    />
+      <Text style={styles.baseText}>Please enter your location:</Text>
 
       <View style={styles.belowSection}>
         <View style={styles.searchSection}>
@@ -76,33 +84,29 @@ const HomeScreen = ({ navigation }) => {
             placeholder="postal code here"
             onChangeText={onChangeText}
             keyboardType="numeric"
+            placeholder='postal code'
           />
         </View>
-        { text !== null ? <Button  color="#000" title="Get Started" onPress={() => navigation.navigate("SearchScreen")}></Button> : null }
+
+        <View style={styles.buttonWrapper}>
+          <Button 
+            color='#fff'
+            
+            style={styles.buttonStyle} 
+            title="Get Started" 
+            onPress={() => navigation.navigate("SearchScreenInitial")}>
+          </Button>
+        </View>
+
       </View>
 
       <Button
-        onPress={() => navigation.navigate("Screen1")}
-        title="Go to Screen1"
+        onPress={() => navigation.navigate("RestaurantInfoScreen")}
+        title="Go to RestaurantInfoScreen"
       />
        <Button
         onPress={() => navigation.navigate("QueueCard")}
         title="Go to QueueCard"
-      />
-
-      
-      <Button 
-        onPress={() => navigation.navigate("SearchScreen")}
-        title='Go to SearchScreen'
-      />
-
-      <Button 
-        onPress={() => navigation.navigate("SearchScreen")}
-        title='Go to SearchScreen'
-      />
-      <Button 
-        onPress={() => navigation.navigate("SearchScreenInitial")}
-        title='Go to SearchScreen ShiHui'
       />
     </ScrollView>
   );
@@ -114,16 +118,18 @@ const HomeScreen = ({ navigation }) => {
 const styles = StyleSheet.create({
   baseText: {
     fontFamily: "SofiaPro",
-    marginLeft: 30,
-    marginTop: 100,
-    fontSize: 30,
+    fontSize: 10,
+    color: '#28334AFF',
+    alignSelf: 'center',
+    marginVertical: 10
   },
   titleText: {
     marginTop: 30,
-    fontSize: 50,
+    fontSize: 30,
     fontWeight: "bold",
-    marginLeft: 30,
+    marginLeft: 40,
     fontFamily: "SofiaPro",
+    color: '#28334AFF'
   },
 
   searchSection: {
@@ -132,27 +138,40 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
     backgroundColor: "#fff",
-    marginBottom: 50
+    marginBottom: 10
   },
   locationIcon: {
     padding: 10,
   },
   input: {
     flex: 1,
-    paddingTop: 10,
-    paddingRight: 10,
-    paddingBottom: 10,
-    paddingLeft: 10,
+    padding: 10,
     backgroundColor: "#fff",
     color: "#424242",
   },
   belowSection: {
     flexDirection: "column",
     width: "60%",
-    marginLeft: 30,
+    alignSelf: 'center'
   },
-
-  
+  buttonWrapper:{
+    backgroundColor: '#28334AFF',
+    borderRadius: 10,
+    padding: 5,
+    margin: 5,
+    
+  },
+  image: {
+    width: 300,
+    borderRadius: 5,
+    height: 300,
+    marginBottom: 5,
+    marginLeft: 40,
+    marginTop:40,
+  },
+  routeStuff: {
+    marginTop: 40,
+  } 
 });
 
 export default HomeScreen;

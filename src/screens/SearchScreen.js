@@ -20,7 +20,10 @@ function SearchScreen(){
     return (
         <View style={styles.viewStyle}>
             <SearchBar 
-                style={styles.searchBarStyle}
+             lightTheme="false"
+             containerStyle={{backgroundColor: 'black', borderWidth: 0, borderRadius: 0}}
+             inputContainerStyle={{backgroundColor: 'light grey', borderWidth: 1, borderRadius: 30}}
+
                 placeholder="Search restaurant"
                 value={term}
                 onChangeText={setTerm}
@@ -29,7 +32,7 @@ function SearchScreen(){
 
             {errorMessage ? <Text>{errorMessage}</Text> : null}
             
-            <Text>We have found {results.length} results</Text>
+            {/* <Text>We have found {results.length} results</Text> */}
             <ScrollView>
                 <ResultsList results={filterResultsByPrice('$')} title="Short Queuing Time" />
                 <ResultsList results={filterResultsByPrice('$$')} title="Longer Queuing Time"/>
@@ -48,6 +51,5 @@ const styles = StyleSheet.create({
     }
 
 });
-
 
 export default SearchScreen;

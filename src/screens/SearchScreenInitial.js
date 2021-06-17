@@ -5,6 +5,7 @@ import { Text, StyleSheet, View, TouchableOpacity, SafeAreaView } from 'react-na
 import { AntDesign } from '@expo/vector-icons'; 
 
 
+
 class SearchScreenInitial extends React.Component {
 
   state = {
@@ -17,19 +18,16 @@ class SearchScreenInitial extends React.Component {
 
   render() {
     const { search } = this.state;
-
     return (
-
       <SafeAreaView style={styles.container1}>
       <SearchBar
         placeholder="Search for Restaurants..."
         onChangeText={this.updateSearch}
         value={search}
         lightTheme="false"
-        containerStyle={{backgroundColor: 'white', borderWidth: 0, borderRadius: 0}}
+        containerStyle={{backgroundColor: 'black', borderWidth: 0, borderRadius: 0}}
         inputContainerStyle={{backgroundColor: 'light grey', borderWidth: 1, borderRadius: 30}}
       />
-
 
     <View style={styles.container2}>
 
@@ -39,7 +37,7 @@ class SearchScreenInitial extends React.Component {
       </Text>
 
       <View style={{flexDirection:"row"}}>
-        <TouchableOpacity onPress={() => alert('Redirecting')} style={styles.button}>
+        <TouchableOpacity onPress={() => this.props.navigation.navigate('SearchScreen')} style={styles.button}>
           <Text style={styles.buttonText}>Waiting Time</Text>
         </TouchableOpacity>
 
@@ -101,7 +99,6 @@ class SearchScreenInitial extends React.Component {
       </View>
 
 
-
       <View style={{flexDirection:"row"}}>
         <TouchableOpacity onPress={() => alert('Redirecting')} style={styles.button}>
           <Text style={styles.buttonText}>Seafood</Text>
@@ -124,7 +121,7 @@ class SearchScreenInitial extends React.Component {
     </View>
 
 
-      <Text>{this.state.search}</Text>
+      {/* <Text>{this.state.search}</Text> */}
 
     </SafeAreaView>
     );
