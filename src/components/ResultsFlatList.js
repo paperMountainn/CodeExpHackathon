@@ -18,7 +18,7 @@ function ResultsFlatList({title, results, navigation}){
                     return (
                         <TouchableOpacity
                             onPress={() => {
-                                navigation.navigate("RestaurantDetailScreen");
+                                navigation.navigate("RestaurantDetailScreen", {id: item.id});
                             }}
                         >
                             <ResultsDetail result={item}/>

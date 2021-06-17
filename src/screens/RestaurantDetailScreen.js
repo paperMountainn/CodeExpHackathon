@@ -3,7 +3,8 @@ import {Text, StyleSheet, View, Image} from 'react-native';
 
 
 function RestaurantInfoScreen({ navigation }){
-
+    const id = navigation.getParam('id');
+    console.log('id');
     return (
         <View style={styles.container}>
             <Text>results show screen</Text>
