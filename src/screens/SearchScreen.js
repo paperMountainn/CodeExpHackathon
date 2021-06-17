@@ -35,7 +35,9 @@ function SearchScreen({navigation}){
                 value={term}
                 lightTheme="false"
                 containerStyle={{backgroundColor: 'white', borderWidth: 0, borderRadius: 0}}
-                inputContainerStyle={{backgroundColor: 'light grey', borderWidth: 1, borderRadius: 10}}
+                onEndEditing={() => searchAPI(term)}
+                inputContainerStyle={{backgroundColor: 'light grey', borderWidth: 1, borderRadius: 10}
+                }
             />
 
             {errorMessage ? <Text>{errorMessage}</Text> : null}
