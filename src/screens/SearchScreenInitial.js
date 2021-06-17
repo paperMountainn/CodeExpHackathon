@@ -20,13 +20,21 @@ class SearchScreenInitial extends React.Component {
     const { search } = this.state;
     return (
       <SafeAreaView style={styles.container1}>
-      <SearchBar
+      {/* <SearchBar
         placeholder="Search for Restaurants..."
         onChangeText={this.updateSearch}
         value={search}
         lightTheme="false"
         containerStyle={{backgroundColor: 'black', borderWidth: 0, borderRadius: 0}}
         inputContainerStyle={{backgroundColor: 'light grey', borderWidth: 1, borderRadius: 30}}
+      /> */}
+      <SearchBar
+        placeholder="Search for Restaurants..."
+        onChangeText={this.updateSearch}
+        value={search}
+        lightTheme="false"
+        containerStyle={{backgroundColor: 'white', borderWidth: 0, borderRadius: 0}}
+        inputContainerStyle={{backgroundColor: 'light grey', borderWidth: 1, borderRadius: 10}}
       />
 
     <View style={styles.container2}>

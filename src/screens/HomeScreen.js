@@ -99,7 +99,7 @@ const HomeScreen = ({ navigation }) => {
         </View>
 
       </View>
-
+{/* 
       <Button
         onPress={() => navigation.navigate("RestaurantInfoScreen")}
         title="Go to RestaurantInfoScreen"
@@ -107,7 +107,7 @@ const HomeScreen = ({ navigation }) => {
        <Button
         onPress={() => navigation.navigate("QueueCard")}
         title="Go to QueueCard"
-      />
+      /> */}
     </ScrollView>
   );
 };

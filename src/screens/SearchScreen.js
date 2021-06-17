@@ -19,15 +19,23 @@ function SearchScreen({navigation}){
 
     return (
         <View style={styles.viewStyle}>
-            <SearchBar 
-             lightTheme="false"
+            {/* <SearchBar 
+             lightTheme={true}
              containerStyle={{backgroundColor: 'black', borderWidth: 0, borderRadius: 0}}
              inputContainerStyle={{backgroundColor: 'light grey', borderWidth: 1, borderRadius: 30}}
 
-                placeholder="Search restaurant"
-                value={term}
+            placeholder="Search restaurant"
+            value={term}
+            onChangeText={setTerm}
+            onEndEditing={() => searchAPI(term)}
+            /> */}
+            <SearchBar
+                placeholder="Search for Restaurants..."
                 onChangeText={setTerm}
-                onEndEditing={() => searchAPI(term)}
+                value={term}
+                lightTheme="false"
+                containerStyle={{backgroundColor: 'white', borderWidth: 0, borderRadius: 0}}
+                inputContainerStyle={{backgroundColor: 'light grey', borderWidth: 1, borderRadius: 10}}
             />
 
             {errorMessage ? <Text>{errorMessage}</Text> : null}
