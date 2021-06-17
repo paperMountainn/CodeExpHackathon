@@ -2,7 +2,7 @@ import React from 'react'
 import {Text, StyleSheet, View, Image} from 'react-native';
 
 
-function RestaurantInfoScreen({ navigation }){
+function RestaurantDetailScreen({ navigation }){
     const id = navigation.getParam('id');
     console.log('id');
     return (
@@ -18,4 +18,4 @@ const styles = StyleSheet.create({
     },
 });
 
-export default RestaurantInfoScreen;
+export default RestaurantDetailScreen;

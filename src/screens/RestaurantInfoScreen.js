@@ -160,14 +160,14 @@ const styles = StyleSheet.create({
   },
 
   mediumText: {
-    fontFamily: "SofiaPro",
+    // fontFamily: "SofiaPro",
     margin: 10,
     fontSize: 15,
   },
   titleText: {
     fontSize: 30,
     fontWeight: "bold",
-    fontFamily: "SofiaPro",
+    // fontFamily: "SofiaPro",
   },
 
   input: {

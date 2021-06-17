@@ -117,7 +117,7 @@ const HomeScreen = ({ navigation }) => {
 
 const styles = StyleSheet.create({
   baseText: {
-    fontFamily: "SofiaPro",
+    // fontFamily: "SofiaPro",
     fontSize: 10,
     color: '#28334AFF',
     alignSelf: 'center',

@@ -30,7 +30,7 @@ const styles = StyleSheet.create({
     // group of styles to the text element
 
     baseText: {
-        fontFamily: "SofiaPro",
+        // fontFamily: "SofiaPro",
         marginLeft: 30,
         marginTop: 15,
         fontSize: 15,
@@ -39,7 +39,7 @@ const styles = StyleSheet.create({
           fontSize: 20,
           marginTop: 30,
         fontWeight: "bold",
-        fontFamily: "SofiaPro",
+        // fontFamily: "SofiaPro",
         
     },
     

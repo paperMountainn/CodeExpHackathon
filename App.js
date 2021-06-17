@@ -5,6 +5,7 @@ import QueueCard from "./src/screens/QueueCard";
 import SearchScreen from './src/screens/SearchScreen'
 import SearchScreenInitial from "./src/screens/SearchScreenInitial";
 import RestaurantInfoScreen from "./src/screens/RestaurantInfoScreen";
+import RestaurantDetailScreen from "./src/screens/RestaurantDetailScreen";
 
 const navigator = createStackNavigator({
   Home: HomeScreen,
